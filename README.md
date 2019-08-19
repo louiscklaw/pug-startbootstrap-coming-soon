@@ -10,7 +10,6 @@
 ```
 # to run
 npm install
-gulp
 npm start
 
 # to develop
