@@ -3,3 +3,23 @@
 mixin video(video_link)
     video(playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop")
         source(src!=video_link type="video/mp4")
+
+mixin masthead(title, desc, button_text)
+    .masthead
+        .masthead-bg
+        .container(class="h-100")
+            .row(class="h-100")
+                .col-12(class="my-auto")
+                    .masthead-content(class="text-white py-5 py-md-0")
+                        h1.mb-3= title
+                        p.mb-5= desc
+                        .input-group-newsletter(class="input-group")
+                            input(type="email" class="form-control" placeholder="Enter email..." aria-label="Enter email..." aria-describedby="basic-addon")
+
+                            .input-group-append
+                                button(class="btn btn-secondary" type="button")= button_text
+
+mixin s_icon(icon_name, icon_link)
+    li(class="list-unstyled-item")
+        a(href!= icon_link)
+            i.fab(class!= icon_name)
