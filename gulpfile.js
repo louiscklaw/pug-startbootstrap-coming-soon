@@ -76,7 +76,7 @@ var PUBLIC_DIR = path.join( __dirname, 'docs' );
 var PUBLIC_CSS = path.join( PUBLIC_DIR, 'css' );
 var PUBLIC_JS = path.join( PUBLIC_DIR, 'js' );
 var PUBLIC_IMG = path.join( PUBLIC_DIR, 'img' );
-var PUBLIC_mp4 = path.join( PUBLIC_DIR, 'mp4' );
+var PUBLIC_MP4 = path.join( PUBLIC_DIR, 'mp4' );
 
 // build config
 var PUG_PATHS = [ CLIENT_SRC, PUG_INC ];
@@ -107,7 +107,7 @@ async function copy_img() {
 }
 
 async function copy_mp4() {
-    return copy_dir( CLIENT_MP4 + '/*', PUBLIC_mp4 + '/' )
+    return copy_dir( CLIENT_MP4 + '/*', PUBLIC_MP4 + '/' )
 }
 
 async function re_privision_public_dir() {
@@ -117,6 +117,7 @@ async function re_privision_public_dir() {
     await mkdir( PUBLIC_IMG );
     await mkdir( PUBLIC_CSS );
     await mkdir( PUBLIC_JS );
+    await mkdir( PUBLIC_MP4 );
     await copy_img();
 }
 
@@ -231,7 +232,7 @@ exports.w = () => {
 }
 
 const build = gulp.parallel( re_privision_public_dir, compile_pug, css, js, copy_img_files );
-const watch = gulp.series( build, gulp.parallel( watchFiles, browserSyncInit ) );
+const watch = gulp.series( default_task, gulp.parallel( watchFiles, browserSyncInit ) );
 
 
 
