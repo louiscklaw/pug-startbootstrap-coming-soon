@@ -1,0 +1,19 @@
+//- index.pug
+
+include ./pug_inc/mixins.pug
+
+doctype html
+html(lang="en")
+    head
+        include ./pug_inc/meta.pug
+        include ./pug_inc/link.pug
+
+        title this is a test 123
+    body
+        .overlay
+        include ./pug_inc/nav.pug
+
+        p hellworld
+
+        include ./pug_inc/footer.pug
+        include ./pug_inc/script.pug

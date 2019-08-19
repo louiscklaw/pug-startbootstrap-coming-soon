@@ -1,0 +1,5 @@
+//- mixins.pug
+
+mixin video(video_link)
+    video(playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop")
+        source(src!=video_link type="video/mp4")
