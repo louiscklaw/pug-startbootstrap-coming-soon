@@ -4,3 +4,15 @@
 
 ### credit to:
 [https://startbootstrap.com/themes/coming-soon/](https://startbootstrap.com/themes/coming-soon/)
+
+
+### to run:
+```
+# to run
+npm install
+gulp
+npm start
+
+# to develop
+npm install -D
+npm test
